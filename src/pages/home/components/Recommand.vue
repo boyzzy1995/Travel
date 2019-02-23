@@ -2,7 +2,7 @@
   <div>
     <div class="recommand-title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommandList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <img class="item-img" :src='item.imgUrl'/>
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -17,20 +17,8 @@
 <script>
 export default {
   name: 'HomeRecommand',
-  data () {
-    return {
-      recommandList: [{
-        id: '001',
-        title: '故宫',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
-        desc: '世界五大宫之首，穿越与您近在咫尺'
-      }, {
-        id: '002',
-        title: '故宫',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
-        desc: '世界五大宫之首，穿越与您近在咫尺'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>

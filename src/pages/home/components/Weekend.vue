@@ -2,7 +2,7 @@
   <div>
     <div class="recommand-title">周末去哪儿</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommandList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <div class="item-img-wrapper">
           <img class="item-img" :src='item.imgUrl'/>
         </div>
@@ -18,20 +18,8 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  data () {
-    return {
-      recommandList: [{
-        id: '001',
-        title: '故宫',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg',
-        desc: '世界五大宫之首，穿越与您近在咫尺'
-      }, {
-        id: '002',
-        title: '故宫',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1811/f3/86173f863bef61.jpg_r_640x214_52b003ac.jpg',
-        desc: '世界五大宫之首，穿越与您近在咫尺'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
@@ -39,14 +27,13 @@ export default {
 <style lang="stylus" scoped>
   @import '~styles/mixins.styl'
   .recommand-title
-    margin-top: .2rem
     line-height: .8rem
     background: #eee
     text-indent: .2rem
   .item-img-wrapper
     height: 0
     overflow: hidden
-    padding-bottom: 33.9%
+    padding-bottom: 37.09%
     .item-img
       width:100%
   .item-info
